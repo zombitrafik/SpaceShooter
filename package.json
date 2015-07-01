@@ -1,0 +1,22 @@
+{
+  "name": "SpaceShooter",
+  "version": "1",
+  "description": "SpaceShooter",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "~4.9.x",
+    "socket.io": "~1.4.x"
+  },
+  "engines": {
+    "node": "0.10.36"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}

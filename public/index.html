@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Space Shooter</title>
+	<style type="text/css">
+	* {
+		margin: 0px;
+		padding: 0px;
+		cursor: url("cursor.cur") 18 18, default;
+	}
+	.positioning {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+	}
+
+	</style>
+</head>
+<body>
+
+<canvas id="bgcanvas" class="positioning"></canvas>
+<canvas id="canvas" class="positioning"></canvas>
+<canvas id="bullcanvas" class="positioning"></canvas>
+<canvas id="explctx" class="positioning"></canvas>
+<canvas id="hudcanvas" class="positioning"></canvas>
+
+<script type="text/javascript">
+	var $$ = {};
+	$$.socket = null;
+</script>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  $$.socket = io();
+</script>
+
+
+<script src="js/config.js"></script>
+<script src="js/events.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/text.js"></script>
+
+<script src="js/planet.js"></script>
+<script src="js/player.js"></script>
+<script src="js/enemies.js"></script>
+<script src="js/bullet.js"></script>
+<script src="js/explosion.js"></script>
+
+<script src="js/socketEvents.js"></script>
+
+<script src="js/game.js"></script>
+
+</body>
+</html>
