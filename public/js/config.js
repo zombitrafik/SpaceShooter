@@ -110,14 +110,41 @@ $$.config = {
 		height: 5,
 		color: "white",
 		health: 100
+	},
+
+	AbilitiesBar: {
+		height: 80,
+		Def: {
+			x: 240,
+			y: 620,
+			r: 50,
+			number: "1",
+			sizeX: 42,
+			sizeY: 42,
+			src: "images/1.png",
+			selected: true,
+			name: "def"
+		},
+		Hook: {
+			x: 300,
+			y: 620,
+			r: 50,
+			number: "2",
+			sizeX: 42,
+			sizeY: 42,
+			src: "images/2.png",
+			selected: false,
+			name: "hook"
+		}
 	}
 }
+
 
 $$.levels = {
 	0 : {
 		bgcolor: "rgba(30, 30, 30, 1)",
 		width: 600, 
-		height: 630,
+		height: 680,
 		planets: [
 			{ type: $$.config.planets.Earth, x: 200, y: 120 },
 			{ type: $$.config.planets.Earth, x: 400, y: 480 },

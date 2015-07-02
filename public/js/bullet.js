@@ -57,7 +57,7 @@ $$.Bullet.prototype.update = function () {
             delete this;
         }
     }
-    if($$.OutOfBounds(this.x, this.y, 0, 0, level.width, level.height)){
+    if($$.OutOfBounds(this.x, this.y, 0, 0, level.width, level.height - $$.config.AbilitiesBar.height)){
         $$.removeFromArray(this, $$.bullets);
     }
     for(var i in $$.planets){
@@ -121,7 +121,7 @@ $$.Hook.prototype.update = function () {
     bullctx.strokeStyle = this.cometColor;
     bullctx.stroke();
 
-    if($$.OutOfBounds(this.x, this.y, 0, 0, level.width, level.height)){
+    if($$.OutOfBounds(this.x, this.y, 0, 0, level.width, level.height - $$.config.AbilitiesBar.height)){
         $$.removeFromArray(this, $$.bullets);
     }
     for(var i in $$.planets){
@@ -131,7 +131,6 @@ $$.Hook.prototype.update = function () {
             if(this.isMe){
                 $$.player.setPlanet(p);
                 $$.player.calcAngle(this.x, this.y);
-                //$$.player.setPos(this.x, this.y);
             }
             delete this;
         }

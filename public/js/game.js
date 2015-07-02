@@ -65,6 +65,7 @@
     $$.enemies.push(enemy);
     */
 
+
 	function GameLoop () {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		bullctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -83,10 +84,12 @@
         for(var i in $$.enemies){
             $$.enemies[i].update();
         }
+        for(var i in $$.abilitiesbar){
+            $$.abilitiesbar[i].update();
+        }
         for(var i in $$.texts){
             $$.texts[i].update();
         }
-
 
         if($$.player)
         $$.player.update();

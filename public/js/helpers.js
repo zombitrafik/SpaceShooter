@@ -39,3 +39,4 @@ $$.HealthBar.prototype.update = function () {
 	ctx.fillStyle = this.color;
 	ctx.fillRect(this.x+1, this.y+1, l, this.height-2);
 }
+

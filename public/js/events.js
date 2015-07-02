@@ -43,9 +43,21 @@
 		}
 		if( e === 49 ){
 			$$.selectedAbility = $$.abilities.Def;
+			for(var i in $$.abilitiesbar){
+				$$.abilitiesbar[i].selected = false;
+				if($$.abilitiesbar[i].name == $$.selectedAbility.name){
+					$$.abilitiesbar[i].selected = true;
+				}
+			}
 		}
 		if( e === 50 ){
 			$$.selectedAbility = $$.abilities.Hook;
+			for(var i in $$.abilitiesbar){
+				$$.abilitiesbar[i].selected = false;
+				if($$.abilitiesbar[i].name == $$.selectedAbility.name){
+					$$.abilitiesbar[i].selected = true;
+				}
+			}
 		}
 	}
 
