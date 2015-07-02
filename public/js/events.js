@@ -41,6 +41,12 @@
 		if( e === 37 || e === 65 ){
 			$$.keys.state.right = 0;
 		}
+		if( e === 49 ){
+			$$.selectedAbility = $$.abilities.Def;
+		}
+		if( e === 50 ){
+			$$.selectedAbility = $$.abilities.Hook;
+		}
 	}
 
 	function keydowncb (e) {

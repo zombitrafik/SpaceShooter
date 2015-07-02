@@ -10,7 +10,7 @@ $$.config = {
 			y: 0,
 			r: 50,
 			name: "Earth",
-			rotateSpeed: 0,
+			rotateSpeed: 0.2,
 			angleRotate: 0,
 			startAngle: 1,
 			endAngle: 2,
@@ -27,7 +27,7 @@ $$.config = {
 			y: 0,
 			r: 30,
 			name: "Mars",
-			rotateSpeed: 2,
+			rotateSpeed: 0.4,
 			angleRotate: 0,
 			startAngle: 0.2,
 			endAngle: 1.2,
@@ -50,7 +50,6 @@ $$.config = {
 		planet: null,
 		angleRotate: 0,
 		runSpeed: 1.5,
-		cooldown: 80,
 		colors: {
 			main: "rgba(24, 118, 250, 1)",
 			circle: "rgba(41, 209, 250, 1)"
@@ -76,6 +75,16 @@ $$.config = {
 		damage: 5
 	},
 
+	Hook: {
+		length: 8,
+		lineWidth: 6,
+		speed: 0.5,
+		color: "yellow",
+		damage: 0,
+		cometLineWidth: 1,
+		cometColor: "rgba(100, 100, 100, 0.3)" 
+	},
+
 	ExplosionOther: {
 		radius: 10,
 		color: "white",
@@ -85,6 +94,12 @@ $$.config = {
 	ExplosionEnemy: {
 		radius: 6,
 		color: "orange",
+		speed: 0.4
+	},
+
+	ExplosionOnMe: {
+		radius: 6,
+		color: "lightblue",
 		speed: 0.4
 	},
 
@@ -102,7 +117,7 @@ $$.levels = {
 	0 : {
 		bgcolor: "rgba(30, 30, 30, 1)",
 		width: 600, 
-		height: 600,
+		height: 630,
 		planets: [
 			{ type: $$.config.planets.Earth, x: 200, y: 120 },
 			{ type: $$.config.planets.Earth, x: 400, y: 480 },

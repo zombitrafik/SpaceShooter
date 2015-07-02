@@ -11,7 +11,7 @@ $$.socket.on('enemyMove', function (data) {
 });
 
 $$.socket.on('bullet', function (data) {
-	$$.bullets.push(new $$.Bullet(data.position.x, data.position.y, data.position.amx, data.position.amy, $$.config.Bullet));
+	$$.bullets.push(new $$.Shoot(data.position.x, data.position.y, data.position.amx, data.position.amy, data.type, false));
 });
 
 $$.socket.on('applyDamage', function (data) {

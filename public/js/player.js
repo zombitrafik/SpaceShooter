@@ -37,14 +37,24 @@ $$.Player = function (config) {
     this.setPlanet = function (planet) {
     	this.planet = planet;
     }
+    this.calcAngle = function (x, y) {
+        var angle = Math.acos((x - this.planet.x) / this.planet.r);
+        if(y - this.planet.y > 0){
+            angle = $$.PI + ($$.PI - angle);
+        }
+        angle = $$.PI * 2 - angle;
+        this.angleRotate = angle;
+        
+    }
 
     $$.texts[this.nicknameHUD.text] = this.nicknameHUD;
 }
 
 $$.Player.prototype.update = function () {
-        
+
     var vx = Math.cos(this.angleRotate)*(this.planet.r+this.r+2);
     var vy = Math.sin(this.angleRotate)*(this.planet.r+this.r+2);
+
 
     this.x = this.planet.x + vx;
     this.y = this.planet.y + vy;
@@ -90,15 +100,16 @@ $$.Player.prototype.update = function () {
 
     var lt = this.lastShoot,
         nt = $$.getTime(),
-        cd = this.cooldown;
+        cd = $$.selectedAbility.cd;
     if($$.mouse.down > 0 && lt + cd <= nt){
-        $$.bullets.push(new $$.Bullet(this.x, this.y, $$.mouse.ax, $$.mouse.ay, $$.config.Bullet));
+        $$.bullets.push(new $$.Shoot(this.x, this.y, $$.mouse.ax, $$.mouse.ay, $$.selectedAbility.name, true));
         this.lastShoot = nt;
         
         // SOCKET ATTACK //
       
         $$.socket.emit('sendShot', {
             position: { x: this.x, y: this.y, amx: $$.mouse.ax, amy: $$.mouse.ay },
+            type: $$.selectedAbility.name,
             name: this.name
         });
     }
